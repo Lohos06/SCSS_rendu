@@ -1,0 +1,65 @@
+@use "./variables.scss" as *;
+@use "./mixin.scss" as *;
+
+.Event {
+  @include centered;
+  flex-direction: column;
+  gap: 2rem;
+
+  height: 50vh;
+  color: $TitlePrimary;
+
+  background-image: url("./assets/VeniceMuseum.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .title {
+    @include title-1;
+  }
+
+  .button {
+    @include button($backgroundTertiary, $textPrimary);
+  }
+}
+
+.Category {
+  @include centered;
+  flex-direction: row;
+  gap: 2rem;
+  margin: 2rem;
+  height: 50vh;
+
+  .SeparationLine {
+    @include SepartionLine(100%, 0%, $textSecondary);
+  }
+
+  .CategoryCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30vw;
+    height: 100%;
+
+    .name {
+      @include centered;
+      justify-content: space-between;
+      flex-direction: row;
+      width: 100%;
+
+      .title {
+        @include title-2;
+      }
+    }
+
+    .SeparationLine {
+      @include SepartionLine(0%, 100%, $backgroundSecondary);
+    }
+
+    .Artists {
+      .SeparationLine {
+        @include SepartionLine(0%, 100%, $textSecondary);
+      }
+    }
+  }
+}
