@@ -1,3 +1,12 @@
-* {
-  background-color: lime;
-}
+// variables de couleur
+
+$backgroundPrimary: #f6f6ec;
+$backgroundSecondary: #12130d;
+$backgroundTertiary: #efede0;
+
+$TitlePrimary: #f1edd4;
+
+// variable de police
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+$textFont: "Montserrat", sans-serif;

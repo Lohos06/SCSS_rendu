@@ -1,0 +1,22 @@
+@use "./variables.scss" as *;
+@use "./mixin.scss" as *;
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: $backgroundSecondary;
+  padding: 25px;
+  color: $TitlePrimary;
+
+  .menu {
+    @include centered;
+    text-transform: uppercase;
+    gap: 30px;
+  }
+
+  .logo {
+    @include title-1;
+  }
+}
