@@ -1,9 +1,5 @@
 @use "./variables.scss" as *;
 
-* {
-  font-family: $textFont;
-}
-
 // mixin des titres
 
 @mixin title-1 {

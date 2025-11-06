@@ -103,3 +103,60 @@
     width: 50%;
   }
 }
+
+.collection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  padding: 3rem;
+
+  .presentationBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      @include title-2;
+    }
+
+    .ViewAll {
+      display: flex;
+    }
+  }
+
+  .SeparationLine {
+    @include SepartionLine(0%, 100%, $backgroundSecondary);
+  }
+
+  .presentation {
+    font-weight: 300;
+  }
+
+  .CollectionList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+
+      .title {
+        @include title-3;
+      }
+
+      .painting {
+        max-width: 300px;
+      }
+    }
+  }
+
+  .button {
+    @include button($backgroundSecondary, $textSecondary);
+    align-self: center;
+    text-align: center;
+  }
+}
