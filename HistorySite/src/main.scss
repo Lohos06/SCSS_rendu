@@ -4,17 +4,25 @@
 .Event {
   @include centered;
   flex-direction: column;
-  gap: 2rem;
-  height: 50vh;
+  height: $section1Height;
 
+  gap: $largeGap;
+
+  @include text-1;
   color: $TitlePrimary;
+
   background-image: url("./assets/VeniceMuseum.webp");
   @include backgroundImage;
 
   .title {
     @include title-1;
-  }
+    text-align: center;
+    max-width: 80vw;
 
+    @include bigger($mobile) {
+      width: 35vw;
+    }
+  }
   .button {
     @include button($backgroundTertiary, $textPrimary);
   }
@@ -22,22 +30,34 @@
 
 .Category {
   @include centered;
-  flex-direction: row;
-  gap: 2rem;
-  margin: 3rem;
-  height: 80vh;
+  flex-direction: column;
 
-  .SeparationLine {
-    @include SepartionLine(100%, 0%, $textSecondary);
+  gap: $tinyGap;
+  margin: $sectionMargin;
+
+  @include bigger($mobile) {
+    flex-direction: row;
+    height: $section1Height;
+    gap: $largeGap;
   }
 
+  .SeparationLine {
+    @include SepartionLine(0%, 0%, $textSecondary);
+    @include bigger($mobile) {
+      @include SepartionLine(100%, 0%, $textSecondary);
+    }
+  }
   .CategoryCard {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 30vw;
+    width: 80vw;
     height: 100%;
-    gap: 1rem;
+    gap: $tinyGap;
+
+    @include bigger($mobile) {
+      width: 30vw;
+    }
 
     .name {
       @include centered;
@@ -49,15 +69,15 @@
         @include title-2;
       }
     }
-
     .SeparationLine {
       @include SepartionLine(0%, 100%, $backgroundSecondary);
     }
-
     .Artists {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: $tinyGap;
+      @include title-3;
+
       .SeparationLine {
         @include SepartionLine(0%, 100%, $textSecondary);
       }
@@ -67,29 +87,37 @@
 
 .Welcome {
   @include centered;
-  flex-direction: row;
-  height: 70vh;
+  flex-direction: column;
+
+  @include bigger($mobile) {
+    flex-direction: row;
+    height: $section1Height;
+  }
 
   .text {
     @include centered;
     flex-direction: column;
-    gap: 1.5rem;
-    width: 50%;
+    gap: $largeGap;
+
+    width: 100%;
     height: 100%;
-    padding: 5rem 10rem;
+    padding: 2rem;
     text-align: center;
     background-color: $backgroundTertiary;
 
+    @include bigger($mobile) {
+      width: 50%;
+      padding: 5rem 10rem;
+    }
+
     div {
       .paragraph {
-        font-weight: 300;
+        @include text-2;
       }
     }
-
     .title {
-      @include title-3;
+      @include title-2;
     }
-
     .moreAbout {
       display: flex;
     }
@@ -100,54 +128,58 @@
     @include backgroundImage;
     display: flex;
     height: 100%;
-    width: 50%;
+    width: 100%;
+
+    @include bigger($mobile) {
+      width: 50%;
+    }
   }
 }
 
 .collection {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: $largeGap;
 
-  padding: 3rem;
+  height: $section2Height;
+  margin: $sectionMargin;
 
   .presentationBar {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
+    gap: $largeGap;
+
     .title {
       @include title-2;
     }
-
     .ViewAll {
       display: flex;
     }
   }
-
   .SeparationLine {
     @include SepartionLine(0%, 100%, $backgroundSecondary);
   }
-
   .presentation {
-    font-weight: 300;
+    @include text-2;
   }
 
   .CollectionList {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: $largeGap;
 
     .card {
       display: flex;
       flex-direction: column;
-      gap: 0.7rem;
+      gap: $tinyGap;
+      @include text-2;
 
       .title {
         @include title-3;
       }
-
       .painting {
         max-width: 300px;
       }
@@ -157,6 +189,5 @@
   .button {
     @include button($backgroundSecondary, $textSecondary);
     align-self: center;
-    text-align: center;
   }
 }

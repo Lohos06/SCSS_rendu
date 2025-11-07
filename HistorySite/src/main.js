@@ -4,3 +4,4 @@ import './variables.scss';
 import './mixin.scss';
 import './header.scss';
 import './main.scss';
+import './footer.scss';

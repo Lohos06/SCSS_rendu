@@ -1,0 +1,61 @@
+@use "./variables.scss" as *;
+@use "./mixin.scss" as *;
+
+.footer {
+  background-color: $backgroundSecondary;
+  color: $textSecondary;
+
+  .footerInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: $largeGap;
+    padding: 2rem;
+
+    @include bigger($mobile) {
+      flex-direction: row;
+    }
+
+    .LegalInfo {
+      display: flex;
+      flex-direction: column;
+      gap: $largeGap;
+
+      @include text-2;
+      color: $textTertiary;
+
+      .title {
+        @include title-2;
+        color: $TitleSecondary;
+      }
+    }
+
+    .LinkList {
+      display: flex;
+      gap: $largeGap;
+
+      .Links {
+        display: flex;
+        flex-direction: column;
+        gap: $largeGap;
+
+        @include text-2;
+        color: $textTertiary;
+
+        .title {
+          @include title-3;
+        }
+      }
+    }
+
+    .socials,
+    .copyright {
+      display: flex;
+      gap: $tinyGap;
+    }
+  }
+
+  .SeparationLine {
+    @include SepartionLine(100%, 0%, $textTertiary);
+  }
+}

@@ -3,17 +3,29 @@
 
 header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  gap: $tinyGap;
   align-items: center;
 
   background-color: $backgroundSecondary;
-  padding: 25px;
+  padding: 1.5rem;
   color: $TitlePrimary;
+
+  @include bigger($mobile) {
+    flex-direction: row;
+  }
 
   .menu {
     @include centered;
+    font-size: 0.9rem;
     text-transform: uppercase;
-    gap: 30px;
+    gap: $tinyGap;
+
+    @include bigger($mobile) {
+      gap: $largeGap;
+      @include text-1;
+    }
   }
 
   .logo {

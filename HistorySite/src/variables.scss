@@ -5,14 +5,30 @@ $backgroundSecondary: #12130d;
 $backgroundTertiary: #efede0;
 
 $TitlePrimary: #f1edd4;
+$TitleSecondary: #b69c48;
 
 $textPrimary: #23231b;
 $textSecondary: #e2e2d8;
+$textTertiary: #abaca4;
 
 // variable de police
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 $textFont: "Montserrat", sans-serif;
-* {
-  font-family: $textFont;
-}
+
+// variables de taill de section :
+
+$section1Height: 80vh;
+$section2Height: 100%;
+
+// variables d'espacement
+
+$sectionMargin: 3rem;
+
+$largeGap: 2rem;
+$tinyGap: 1rem;
+
+// variables de taille d'ecrans
+
+$mobile: 768px;
+$table: 1000px;
